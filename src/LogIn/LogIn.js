@@ -5,6 +5,7 @@ import { toast } from 'react-hot-toast';
 import { Zoom } from 'react-reveal';
 import { FaUserAlt } from 'react-icons/fa';
 import { AuthContext } from '../Contexts/AuthProvider';
+import useTitle from '../Components/MyHooks/useTitle';
 
 const Login = () => {
     const { signIn } = useContext(AuthContext);
@@ -12,6 +13,8 @@ const Login = () => {
     const location = useLocation();
     const from = location?.state?.form?.pathname || '/';
     const navigate = useNavigate();
+    useTitle("Login");
+
     const { register, formState: { errors }, handleSubmit } = useForm();
 
     // Login Handler 

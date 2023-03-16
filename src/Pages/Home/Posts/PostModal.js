@@ -37,11 +37,12 @@ const PostModal = ({ setOpen }) => {
                         userName: user?.displayName,
                         post: data.post,
                         postedImg: image,
-                        date: postedDate
+                        date: postedDate,
+                        email: user?.email
                     }
                     console.log(postedData);
 
-                    fetch('http://localhost:5000/posts', {
+                    fetch('https://fb-demo-server.vercel.app/posts', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'

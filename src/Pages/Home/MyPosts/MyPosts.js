@@ -1,21 +1,21 @@
 import React from 'react';
 import { useLoaderData, useNavigation } from 'react-router-dom';
 import { HiOutlineInbox, HiOutlineShare, HiOutlineThumbUp } from 'react-icons/hi';
+import Spinner from '../../../Shared/Spinner/Spinner';
 
 const MyPosts = () => {
     const navigation = useNavigation();
     const posts = useLoaderData([]);
-    console.log(posts);
 
     if (navigation.state === "loading") {
-        return "";
+        return <Spinner />;
     }
     return (
         <>
             {
-                posts.map(post => <div
+                posts.reverse().map(post => <div
                     key={post._id}
-                    className='w-[80vw] mx-auto py-6 rounded-lg my-10 shadow-md bg-gray-50 border-2 border-gray-200 shadow-gray-500'>
+                    className='w-full md:w-[80vw] mx-auto py-6 rounded-lg my-10 shadow-md bg-gray-50 border-2 border-gray-200 shadow-gray-500'>
                     <div className='md:flex justify-between items-center px-5 md:px-10'>
                         <div className='flex justify-start items-center'>
                             <img src={post?.userProfile} alt="userImage" className='w-10 h-10 rounded-full' />

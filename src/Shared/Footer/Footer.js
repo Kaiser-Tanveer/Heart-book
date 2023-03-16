@@ -1,25 +1,26 @@
 import React from 'react';
-import { FaFacebook, FaGithub, FaHeartBroken, FaLinkedin } from 'react-icons/fa';
+import { FaFacebook, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { HiMail, HiPhoneOutgoing } from 'react-icons/hi';
 
 const Footer = () => {
     return (
-        <footer className="p-4 bg-white sm:p-6 dark:bg-gray-900">
+        <footer className="p-4 bg-white sm:p-6 dark:bg-gray-800">
             <div className="md:flex md:justify-between">
                 <div className="mb-6 md:mb-0">
-                    <a href="#" className="flex items-center">
-                        <FaHeartBroken className='text-emerald-600 text-2xl mr-1' />
+                    <div className="flex items-center">
+                        <img src="https://i.ibb.co/qp379k9/heart-Icon.png" alt="" className='w-8 mr-2' />
                         <span className="self-center text-2xl font-bold whitespace-nowrap dark:text-white">Heart Book</span>
-                    </a>
+                    </div>
                 </div>
                 <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
                     <div>
                         <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
                         <ul className="text-gray-600 dark:text-gray-400">
                             <li className="mb-4">
-                                <a href="#" className="hover:underline">Client Code</a>
+                                <a href="https://github.com/Kaiser-Tanveer/Heart-book.git" target='_blank' className="hover:underline">Client Code</a>
                             </li>
                             <li>
-                                <a href="#" className="hover:underline">Server Code</a>
+                                <a href="https://github.com/Kaiser-Tanveer/Heart-Book-Server.git" target='_blank' className="hover:underline">Server Code</a>
                             </li>
                         </ul>
                     </div>
@@ -27,10 +28,10 @@ const Footer = () => {
                         <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
                         <ul className="text-gray-600 dark:text-gray-400">
                             <li className="mb-4">
-                                <a href="https://github.com/themesberg/flowbite" className="hover:underline ">Email</a>
+                                <a href="mailto:kaisertanveer0@gmail.com" className="hover:underline flex items-center overflow-y-auto"><HiMail className='mr-1' />kaisertanveer0@gmail.com</a>
                             </li>
                             <li>
-                                <a href="https://discord.gg/4eeurUVvTy" className="hover:underline">Phone</a>
+                                <a href="tel: +8801851072581" className="hover:underline flex items-center"><HiPhoneOutgoing className='mr-1' />+8801851072581</a>
                             </li>
                         </ul>
                     </div>

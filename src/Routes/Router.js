@@ -5,6 +5,8 @@ import NotFound from "../Pages/NotFound/NotFound";
 import Login from "../LogIn/LogIn";
 import Register from "../LogIn/Register";
 import MyPosts from "../Pages/Home/MyPosts/MyPosts";
+import Banner from "../Pages/Home/Banner";
+import UserProfile from "../Pages/UserProfile/UserProfile";
 
 const router = createBrowserRouter([
     {
@@ -17,12 +19,22 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home />
+                element: <Home />,
+                loader: async () => await fetch('https://fb-demo-server.vercel.app/posts')
             },
             {
                 path: '/home',
                 element: <Home />,
-                loader: async () => await fetch('http://localhost:5000/posts')
+                loader: async () => await fetch('https://fb-demo-server.vercel.app/posts')
+            },
+            {
+                path: '/profile',
+                element: <UserProfile />,
+
+            },
+            {
+                path: '/banner',
+                element: <Banner />,
             },
             {
                 path: '/posts',
