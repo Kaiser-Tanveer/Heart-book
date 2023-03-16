@@ -62,7 +62,7 @@ const Login = () => {
                                 "flex w-full items-center justify-center h-12 px-6 text-sm font-bold rounded bg-primary hover:scale-110 hover:text-gray-100 text-gray-900 uppercase duration-500">Login</button>
                         </div>
                         <div className="flex justify-center mt-6 space-x-2 text-xs">
-                            <p className="text-gray-600">New to T-Task? Please <Link className='link-hover' to='/register'>Register</Link></p>
+                            <p className="text-gray-600">New to HeartBook? Please <Link className='link-hover' to='/register'>Register</Link></p>
                         </div>
                     </form>
                 </div>

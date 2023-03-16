@@ -11,29 +11,35 @@ const Header = () => {
     const menuItems = <>
         <li><NavLink
             className={({ isActive }) =>
-                isActive ? 'flex rounded-md text-gray-100 font-semibold bg-sky-400 md:bg-sky-600 items-center text-xl m-3 lg:text-base hover:shadow-lg hover:shadow-gray-700 hover:border hover:border-gray-100 hover:scale-110 duration-500' : undefined
+                isActive ? 'flex rounded-md shadow-gray-700 border-2 border-gray-100 text-white font-semibold bg-sky-400 md:bg-sky-600 items-center text-xl m-3 lg:text-base shadow-lg hover:scale-110 duration-500'
+                    :
+                    "flex rounded-md shadow-inner shadow-gray-700 border-2 border-gray-100 text-gray-700 hover:text-white hover:gray-100 font-semibold bg-gray-100 hover:bg-sky-400 hover:md:bg-sky-600 items-center text-xl m-3 lg:text-base hover:shadow-lg hover:shadow-gray-700 hover:scale-110 duration-500"
             }
             to='/home'><HiOutlineHome /> Home</NavLink></li>
         {
             user ?
                 <li>
-                    <div
+                    <NavLink
                         onClick={() => logOut()
                             .then(() => { })
                             .catch(err => {
                                 toast.error(err.message);
                             })
                         }
-                        className='bg-pink-400 m-3 text-xl hover:text-gray-100 font-semibold hover:scale-110 hover:shadow-lg hover:border hover:border-gray-100 hover:shadow-gray-700 duration-500'>
+                        className='flex rounded-md shadow-gray-700 border-2 border-gray-100 text-gray-700 hover:text-white font-semibold bg-pink-200 hover:bg-pink-400 hover:md:bg-pink-600 items-center text-xl m-3 lg:text-base shadow-inner hover:shadow-lg hover:shadow-gray-700 hover:scale-110 duration-500'>
                         <HiLogout className='mr-1' />
                         LogOut
-                    </div>
+                    </NavLink>
                 </li>
                 :
                 <li>
-                    <Link
-                        className='bg-sky-400 md:bg-sky-600 m-3 text-xl hover:text-gray-100 font-semibold hover:scale-110 hover:shadow-lg hover:border hover:border-gray-100 hover:shadow-gray-700 duration-500'
-                        to='/reg'><HiLogin className='mr-1' /> Register</Link>
+                    <NavLink
+                        className={({ isActive }) =>
+                            isActive ?
+                                'flex rounded-md shadow-gray-700 border-2 border-gray-100 text-white font-semibold bg-emerald-400 md:bg-emerald-600 items-center text-xl m-3 lg:text-base shadow-lg hover:scale-110 duration-500'
+                                :
+                                'flex rounded-md shadow-gray-700 border-2 border-gray-100 text-gray-700 hover:text-white font-semibold bg-emerald-200 hover:bg-emerald-400 hover:md:bg-emerald-600 items-center text-xl m-3 lg:text-base shadow-inner hover:shadow-lg hover:shadow-gray-700 hover:scale-110 duration-500'}
+                        to='/reg'><HiLogin className='mr-1' /> Register</NavLink>
                 </li>
         }
     </>
@@ -61,9 +67,15 @@ const Header = () => {
             <div className="navbar-end">
                 {
                     user ?
-                        <Link to='/profile'>
-                            <img src={user?.photoURL} alt="user" className='w-12 h-12 rounded-full border-2 border-gray-700' />
-                        </Link>
+                        <NavLink
+                            className={({ isActive }) =>
+                                isActive ? 'flex rounded-full shadow-gray-700 border-2 border-gray-100 text-white font-semibold items-center text-xl m-3 lg:text-base shadow-lg hover:scale-110 duration-500'
+                                    :
+                                    "flex rounded-full shadow-inner shadow-gray-700 border-2 border-gray-100 text-gray-700 hover:text-white hover:gray-100 font-semibold bg-gray-100 items-center text-xl m-3 lg:text-base hover:shadow-lg hover:shadow-gray-700 hover:scale-110 duration-500"
+                            }
+                            to='/profile'>
+                            <img src={user?.photoURL} alt="user" className='w-16 h-16 rounded-full p-1 drop-shadow-lg shadow-gray-700' />
+                        </NavLink>
                         :
                         <FaUser className='text-4xl border-2 rounded-full border-gray-700 p-1' />
                 }
