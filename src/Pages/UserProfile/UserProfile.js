@@ -18,7 +18,7 @@ const UserProfile = () => {
         queryKey: ["/userPosts", user?.email],
         queryFn: async () => {
             const res = await fetch(
-                `http://localhost:5000/posts?email=${user?.email}`
+                `https://fb-demo-server.vercel.app/posts?email=${user?.email}`
             );
             const data = await res.json();
             return data;
