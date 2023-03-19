@@ -30,7 +30,7 @@ const UserProfile = () => {
         return <Spinner />
     }
     return (
-        <>
+        <div className='pt-[92px] lg:pt-24'>
             {
                 user ?
                     <div className='min-h-screen container mx-auto'>
@@ -70,7 +70,7 @@ const UserProfile = () => {
                                                     <p className='px-5 py-4 md:px-0'>
                                                         {post?.post}
                                                     </p>
-                                                    <img src={post?.postedImg} alt="" className='w-full max-h-screen' />
+                                                    <img src={post?.postedImg} alt="" className='w-full max-h-screen rounded-md' />
                                                 </div>
                                                 <div className='mx-5 md:mx-10 flex items-center justify-between mt-4 py-2 border-y-2 border-gray-300'>
                                                     <div className='flex items-center md:text-xl'>
@@ -97,7 +97,7 @@ const UserProfile = () => {
                     :
                     <h2 className='min-h-screen container mx-auto mt-24 text-2xl text-center text-sky-500 font-bold'>Please <Link className='text-pink-500 link-hover' to="/logIn"> Login</Link> to access your profile</h2>
             }
-        </>
+        </div>
     );
 };
 

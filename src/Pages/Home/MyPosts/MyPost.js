@@ -6,7 +6,7 @@ import { Link, useNavigation } from 'react-router-dom';
 import Spinner from '../../../Shared/Spinner/Spinner';
 import useTitle from '../../../Components/MyHooks/useTitle';
 
-const Posts = () => {
+const MyPost = () => {
     const { user } = useContext(AuthContext);
     const [open, setOpen] = useState(2);
     const navigation = useNavigation();
@@ -17,7 +17,7 @@ const Posts = () => {
     }
     return (
         <main>
-            <form className='w-full md:w-[80vw] mx-auto p-10 rounded-lg my-10 shadow-md bg-gray-50 border-2 border-gray-200 shadow-gray-500'>
+            <form className='w-full md:w-[60vw] mx-auto p-10 rounded-lg my-10 drop-shadow-lg shadow-lg hover:scale-110 bg-gray-50 border-2 border-gray-200 shadow-gray-700 duration-500'>
                 <div className='flex flex-col md:flex-row items-center gap-6'>
                     <Link to="/profile">
                         <img src={user?.photoURL} alt="" className='w-14 h-14 mx-auto rounded-full border-2 border-emerald-300 p-1' />
@@ -57,4 +57,4 @@ const Posts = () => {
     );
 };
 
-export default Posts;
+export default MyPost;

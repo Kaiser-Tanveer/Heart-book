@@ -4,9 +4,9 @@ import Home from "../Pages/Home/Home";
 import NotFound from "../Pages/NotFound/NotFound";
 import Login from "../LogIn/LogIn";
 import Register from "../LogIn/Register";
-import MyPosts from "../Pages/Home/MyPosts/MyPosts";
 import Banner from "../Pages/Home/Banner";
 import UserProfile from "../Pages/UserProfile/UserProfile";
+import AllPosts from "../Pages/Home/AllPosts/Post";
 
 const router = createBrowserRouter([
     {
@@ -38,7 +38,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/posts',
-                element: <MyPosts />,
+                element: <AllPosts />,
             },
             {
                 path: 'logIn',

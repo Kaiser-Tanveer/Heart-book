@@ -3,7 +3,7 @@ import { useLoaderData, useNavigation } from 'react-router-dom';
 import Spinner from '../../../Shared/Spinner/Spinner';
 import Post from './Post';
 
-const MyPosts = () => {
+const AllPosts = () => {
     const navigation = useNavigation();
     const posts = useLoaderData([]);
 
@@ -22,4 +22,4 @@ const MyPosts = () => {
     );
 };
 
-export default MyPosts;
+export default AllPosts;

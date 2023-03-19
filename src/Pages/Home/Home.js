@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
-import Posts from './Posts/Posts';
-import MyPosts from './MyPosts/MyPosts';
 import { AuthContext } from '../../Contexts/AuthProvider';
 import Banner from './Banner';
 import { useNavigation } from 'react-router-dom';
 import Spinner from '../../Shared/Spinner/Spinner';
 import useTitle from '../../Components/MyHooks/useTitle';
+import MyPost from './MyPosts/MyPost';
+import AllPosts from './AllPosts/AllPosts';
 
 const Home = () => {
     const navigation = useNavigation();
@@ -16,7 +16,7 @@ const Home = () => {
         return <Spinner />
     }
     return (
-        <div>
+        <div className='pt-12 lg:pt-20'>
             {
                 !user ?
                     <>
@@ -24,8 +24,8 @@ const Home = () => {
                     </>
                     :
                     <>
-                        <Posts />
-                        <MyPosts />
+                        <MyPost />
+                        <AllPosts />
                     </>
             }
         </div>

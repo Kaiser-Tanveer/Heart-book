@@ -4,7 +4,7 @@ import { HiMail, HiPhoneOutgoing } from 'react-icons/hi';
 
 const Footer = () => {
     return (
-        <footer className="p-4 bg-white sm:p-6 dark:bg-gray-800">
+        <footer className="p-4 bg-emerald-500 sm:p-6">
             <div className="md:flex md:justify-between">
                 <div className="mb-6 md:mb-0">
                     <div className="flex items-center">
@@ -14,8 +14,8 @@ const Footer = () => {
                 </div>
                 <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
                     <div>
-                        <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
-                        <ul className="text-gray-600 dark:text-gray-400">
+                        <h2 className="mb-6 text-sm font-semibold uppercase text-white">Resources</h2>
+                        <ul className="text-gray-200">
                             <li className="mb-4">
                                 <a href="https://github.com/Kaiser-Tanveer/Heart-book.git" target='_blank' className="hover:underline">Client Code</a>
                             </li>
@@ -25,8 +25,8 @@ const Footer = () => {
                         </ul>
                     </div>
                     <div>
-                        <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
-                        <ul className="text-gray-600 dark:text-gray-400">
+                        <h2 className="mb-6 text-sm font-semibold uppercase text-white">Follow us</h2>
+                        <ul className="text-gray-200">
                             <li className="mb-4">
                                 <a href="mailto:kaisertanveer0@gmail.com" className="hover:underline flex items-center overflow-y-auto"><HiMail className='mr-1' />kaisertanveer0@gmail.com</a>
                             </li>
@@ -36,8 +36,8 @@ const Footer = () => {
                         </ul>
                     </div>
                     <div>
-                        <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
-                        <ul className="text-gray-600 dark:text-gray-400">
+                        <h2 className="mb-6 text-sm font-semibold uppercase text-white">Legal</h2>
+                        <ul className="text-gray-200">
                             <li className="mb-4">
                                 <a href="#" className="hover:underline">Privacy Policy</a>
                             </li>
