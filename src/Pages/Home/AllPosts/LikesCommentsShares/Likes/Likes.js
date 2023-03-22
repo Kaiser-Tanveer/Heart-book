@@ -5,14 +5,12 @@ import { toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 
 const Likes = ({ post, likes }) => {
-    console.log(likes);
     const navigate = useNavigate();
     const { user } = useContext(AuthContext);
 
     // States 
     const [like, setLike] = useState(false);
     const [singleLike, setSingleLike] = useState(false);
-    console.log(user);
 
 
     // getting singleLike 
@@ -24,7 +22,6 @@ const Likes = ({ post, likes }) => {
     // Like Handler 
     const likeHandler = (id) => {
         setLike(!like);
-        console.log(id);
         const myLike = {
             postId: id,
             like: !like,
@@ -44,7 +41,6 @@ const Likes = ({ post, likes }) => {
                 .then(res => res.json())
                 .then(data => {
                     if (data.acknowledged === true) {
-                        console.log(data);
                         toast.success("Liked");
                         navigate('/');
                     }
@@ -60,7 +56,6 @@ const Likes = ({ post, likes }) => {
                 .then(res => res.json())
                 .then(data => {
                     if (data.acknowledged === true) {
-                        console.log(data);
                         toast.success("Disliked");
                         navigate('/');
                     }

@@ -1,10 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { toast } from 'react-hot-toast';
+import React, { useEffect, useState } from 'react';
 import { HiThumbUp } from 'react-icons/hi';
-import { AuthContext } from '../../../Contexts/AuthProvider';
-import { Link, useNavigate } from 'react-router-dom';
-import moment from 'moment/moment';
-import { useForm } from 'react-hook-form';
 import { Zoom } from 'react-reveal';
 import { FaComments } from 'react-icons/fa';
 import LikesCommentsShares from './LikesCommentsShares/LikesCommentsShares';
@@ -21,8 +16,7 @@ const AllPosts = ({ post }) => {
         fetch(`https://fb-demo-server.vercel.app/likes?id=${post._id}`)
             .then(res => res.json())
             .then(data => setLikes(data))
-    }, [post._id])
-    console.log(likes);
+    }, [post._id]);
 
 
     // Fetching Commented Data 
@@ -30,13 +24,13 @@ const AllPosts = ({ post }) => {
         fetch(`https://fb-demo-server.vercel.app/comments?id=${post._id}`)
             .then(res => res.json())
             .then(data => setComments(data))
-    }, [post._id])
+    }, [post._id]);
     return (
         <>
             <Zoom>
                 <div
                     key={post._id}
-                    className='w-full container md:w-[60vw] min-h-screen mx-auto pt-6 pb-10 rounded-lg my-10 shadow-inner hover:shadow-lg hover:shadow-gray-700 shadow-gray-700 bg-gray-50 border-2 border-gray-200 cursor-pointer duration-500 group'>
+                    className='w-full container md:w-[750px] min-h-screen mx-auto pt-6 pb-10 rounded-lg my-10 shadow-inner hover:shadow-lg hover:shadow-gray-700 shadow-gray-700 bg-gray-50 border-2 border-gray-200 cursor-pointer duration-500 group'>
                     <div className='md:flex justify-between items-center px-5 md:px-10'>
                         <div className='flex justify-start items-center'>
                             <img src={post?.userProfile} alt="userImage" className='w-10 h-10 rounded-full' />

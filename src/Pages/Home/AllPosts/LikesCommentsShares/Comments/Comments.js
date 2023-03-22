@@ -4,12 +4,14 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../../../Contexts/AuthProvider';
 import { useForm } from 'react-hook-form';
 import moment from 'moment/moment';
+import Reply from './Reply';
 
 const Comments = ({ post, show, comments }) => {
     const navigate = useNavigate();
     const { user } = useContext(AuthContext);
     const { register, formState: { errors }, handleSubmit } = useForm();
     const commentedDate = moment().format('Do MMMM, h:mm a');
+
 
     const commentHandler = data => {
         const id = post._id;
@@ -40,6 +42,8 @@ const Comments = ({ post, show, comments }) => {
                 toast.error(err.message);
             })
     }
+
+
     return (
         <>
             {
@@ -54,25 +58,27 @@ const Comments = ({ post, show, comments }) => {
                         placeholder='Write your comments here...'
                         {...register("comment", { required: "Write something." })}
                         className='w-full inline p-2 border-2 border-emerald-300 rounded-md' />
-                    {errors.post && <p className='text-error'>{errors.post.message}</p>}
+                    {errors.comment && <p className='text-error'>{errors.comment.message}</p>}
                     <input type="submit" value='Send' className='btn btn-sm btn-success rounded-md mt-2' />
                 </form>
             }
             {
                 comments.length > 0 &&
-                comments.map(comment => <div className='mx-5 md:mx-10 pt-4'>
-                    <div className='flex items-start'>
-                        <img src={comment?.commentedUser} alt="userImg" className='w-10 h-10 rounded-full border-2 border-emerald-300 inline shadow-md shadow-gray-700' />
-                        <div className='ml-2 bg-gray-200 p-2 rounded-lg w-full shadow-inner shadow-gray-700 hover:shadow-md hover:shadow-gray-500 duration-700'>
-                            <h4 className='font-bold'>{comment?.commentedUserName}</h4>
-                            <p>{comment?.comment}</p>
+                comments.map(comment =>
+                    <div
+                        key={comment._id}
+                        className='mx-5 md:mx-10 pt-4'>
+                        <div className="flex items-start">
+                            <img src={comment?.commentedUserProfile} alt="userImg" className='w-10 h-10 rounded-full border-2 border-emerald-300 inline shadow-md shadow-gray-700' />
+                            <div className='ml-2 bg-gray-200 p-2 rounded-lg w-full shadow-inner shadow-gray-700 hover:shadow-md hover:shadow-gray-500 duration-700'>
+                                <h4 className='font-bold'>{comment?.commentedUserName}</h4>
+                                <p>{comment?.comment}</p>
+                            </div>
                         </div>
-                    </div>
-                    <div className='ml-12 flex items-start justify-between'>
-                        <p className='font-bold'>Reply</p>
-                        <p className='text-gray-700 text-right'>{comment?.commentedDate}</p>
-                    </div>
-                </div>)
+                        <Reply
+                            comment={comment}
+                        />
+                    </div>)
             }
         </>
     );

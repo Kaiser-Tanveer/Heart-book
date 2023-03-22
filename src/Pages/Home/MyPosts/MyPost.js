@@ -17,7 +17,7 @@ const MyPost = () => {
     }
     return (
         <main>
-            <form className='w-full md:w-[60vw] mx-auto p-10 rounded-lg my-10 drop-shadow-lg shadow-lg hover:scale-110 bg-gray-50 border-2 border-gray-200 shadow-gray-700 duration-500'>
+            <form className='w-full md:w-[750px] mx-auto p-10 rounded-lg my-10 drop-shadow-lg shadow-lg hover:scale-110 bg-gray-50 border-2 border-gray-200 shadow-gray-700 duration-500'>
                 <div className='flex flex-col md:flex-row items-center gap-6'>
                     <Link to="/profile">
                         <img src={user?.photoURL} alt="" className='w-14 h-14 mx-auto rounded-full border-2 border-emerald-300 p-1' />

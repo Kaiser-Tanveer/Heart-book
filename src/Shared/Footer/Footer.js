@@ -17,10 +17,10 @@ const Footer = () => {
                         <h2 className="mb-6 text-sm font-semibold uppercase text-white">Resources</h2>
                         <ul className="text-gray-200">
                             <li className="mb-4">
-                                <a href="https://github.com/Kaiser-Tanveer/Heart-book.git" target='_blank' className="hover:underline">Client Code</a>
+                                <a href="https://github.com/Kaiser-Tanveer/Heart-book.git" target='_blank' className="underline">Client Code</a>
                             </li>
                             <li>
-                                <a href="https://github.com/Kaiser-Tanveer/Heart-Book-Server.git" target='_blank' className="hover:underline">Server Code</a>
+                                <a href="https://github.com/Kaiser-Tanveer/Heart-Book-Server.git" target='_blank' className="underline">Server Code</a>
                             </li>
                         </ul>
                     </div>
@@ -53,15 +53,15 @@ const Footer = () => {
                 <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="#" className="hover:underline">Heart Book</a>. All Rights Reserved.
                 </span>
                 <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
-                    <a href="#" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                    <a href="https://web.facebook.com/Kaiser2581" target='_blank' className="text-gray-700 text-xl duration-500 hover:scale-125 hover:text-gray-900 dark:hover:text-white">
                         <FaFacebook className='text-xl' />
                         <span className="sr-only">Facebook</span>
                     </a>
-                    <a href="#" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                    <a href="https://github.com/Kaiser-Tanveer" target='_blank' className="text-gray-700 text-xl duration-500 hover:scale-125 hover:text-gray-900 dark:hover:text-white">
                         <FaGithub />
                         <span className="sr-only">GitHub</span>
                     </a>
-                    <a href="#" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                    <a href="https://www.linkedin.com/in/kaiser-tanveer/" target='_blank' className="text-gray-700 text-xl duration-500 hover:scale-125 hover:text-gray-900 dark:hover:text-white">
                         <FaLinkedin />
                         <span className="sr-only">LinkedIn</span>
                     </a>
